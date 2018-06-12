@@ -1,6 +1,7 @@
 <?php
 namespace tratabor\components\systems\states\plugins;
 
+use tratabor\components\systems\Plugin;
 use tratabor\interfaces\systems\IState;
 use tratabor\interfaces\systems\states\IStateMachine;
 use tratabor\interfaces\systems\states\IStatePreventable;
@@ -12,7 +13,7 @@ use tratabor\interfaces\systems\states\machines\plugins\IPluginIsStateValid;
  * @package tratabor\components\systems\states\machines\plugins
  * @author Funcraft <me@funcraft.ru>
  */
-class PluginIsStateValidMaxTry implements IPluginIsStateValid
+class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
 {
     /**
      * @param IStateMachine $machine
