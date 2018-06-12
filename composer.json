@@ -1,0 +1,9 @@
+{
+  "name": "jeyroik/sm-plugin-max-try",
+  "description": "Plugin for jeyroik StateMachine. Allow to use on terminate transition and max try parameter.",
+  "autoload": {
+    "psr-4": {
+      "tratabor\\": "src/"
+    }
+  }
+}
