@@ -42,7 +42,7 @@ class ExtensionMaxTry extends StateExtension implements IStateExtension
      */
     public function getMaxTry(): int
     {
-        return (int) $this->state->getAdditional(static::STATE__MAX_TRY);
+        return $this->state->getAdditional(static::STATE__MAX_TRY, 0);
     }
 
     /**
@@ -62,7 +62,7 @@ class ExtensionMaxTry extends StateExtension implements IStateExtension
      */
     public function getOnTerminate(): string
     {
-        return $this->state->getAdditional(static::STATE__ON_TERMINATE);
+        return $this->state->getAdditional(static::STATE__ON_TERMINATE, '');
     }
 
     /**
@@ -70,6 +70,6 @@ class ExtensionMaxTry extends StateExtension implements IStateExtension
      */
     public function getTriesCount(): int
     {
-        return $this->state->getAdditional(static::STATE__CURRENT_TRIES_COUNT);
+        return $this->state->getAdditional(static::STATE__CURRENT_TRIES_COUNT, 0);
     }
 }
