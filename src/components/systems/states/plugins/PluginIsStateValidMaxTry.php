@@ -15,6 +15,8 @@ use tratabor\interfaces\systems\states\machines\plugins\IPluginIsStateValid;
  */
 class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
 {
+    protected static $statesTries = [];
+
     /**
      * @param IStateMachine $machine
      * @param IState|null $state
@@ -28,6 +30,16 @@ class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
              * @var $state IStatePreventable
              */
             if ($state->getMaxTry() && ($state->getTriesCount() <= $state->getMaxTry())) {
+                if (!isset(static::$statesTries[$state->getId()])) {
+                    static::$statesTries[$state->getId()] = 0;
+                }
+
+                if (static::$statesTries[$state->getId()] >= $state->getMaxTry()) {
+                    return false;
+                }
+
+                static::$statesTries[$state->getId()]++;
+                
                 return true;
             }
         }
