@@ -1,14 +1,14 @@
 <?php
-namespace tratabor\components\systems\states\plugins;
+namespace jeyroik\extas\components\systems\states\plugins;
 
-use tratabor\components\systems\states\StateExtension;
-use tratabor\interfaces\systems\states\IStateExtension;
-use tratabor\interfaces\systems\states\IStatePreventable;
+use jeyroik\extas\components\systems\states\StateExtension;
+use jeyroik\extas\interfaces\systems\states\IStateExtension;
+use jeyroik\extas\interfaces\systems\states\IStatePreventable;
 
 /**
  * Class PluginMaxTry
  *
- * @package tratabor\components\systems\states\plugins
+ * @package jeyroik\extas\components\systems\states\plugins
  * @author Funcraft <me@funcraft.ru>
  */
 class ExtensionMaxTry extends StateExtension implements IStateExtension

@@ -1,12 +1,12 @@
 <?php
-namespace tratabor\components\systems\states\machines\plugins;
+namespace jeyroik\extas\components\systems\states\machines\plugins;
 
-use tratabor\components\systems\Plugin;
-use tratabor\components\systems\states\plugins\PluginAfterStateBuildMaxTry;
-use tratabor\interfaces\systems\IPlugin;
-use tratabor\interfaces\systems\states\IStateFactory;
-use tratabor\interfaces\systems\states\IStateMachine;
-use tratabor\interfaces\systems\states\machines\plugins\IPluginInitStateFactory;
+use jeyroik\extas\components\systems\Plugin;
+use jeyroik\extas\components\systems\states\plugins\PluginAfterStateBuildMaxTry;
+use jeyroik\extas\interfaces\systems\IPlugin;
+use jeyroik\extas\interfaces\systems\states\IStateFactory;
+use jeyroik\extas\interfaces\systems\states\IStateMachine;
+use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginInitStateFactory;
 
 class PluginInitStateFactoryMaxTry extends Plugin implements IPluginInitStateFactory
 {

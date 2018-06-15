@@ -1,16 +1,16 @@
 <?php
-namespace tratabor\components\systems\states\plugins;
+namespace jeyroik\extas\components\systems\states\plugins;
 
-use tratabor\components\systems\Plugin;
-use tratabor\interfaces\systems\IState;
-use tratabor\interfaces\systems\states\IStateMachine;
-use tratabor\interfaces\systems\states\IStatePreventable;
-use tratabor\interfaces\systems\states\machines\plugins\IPluginIsStateValid;
+use jeyroik\extas\components\systems\Plugin;
+use jeyroik\extas\interfaces\systems\IState;
+use jeyroik\extas\interfaces\systems\states\IStateMachine;
+use jeyroik\extas\interfaces\systems\states\IStatePreventable;
+use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginIsStateValid;
 
 /**
  * Class PluginIsStateValidMaxTry
  *
- * @package tratabor\components\systems\states\machines\plugins
+ * @package jeyroik\extas\components\systems\states\machines\plugins
  * @author Funcraft <me@funcraft.ru>
  */
 class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
@@ -39,7 +39,7 @@ class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
                 }
 
                 static::$statesTries[$state->getId()]++;
-                
+
                 return true;
             }
         }

@@ -1,15 +1,15 @@
 <?php
-namespace tratabor\components\systems\states\plugins;
+namespace jeyroik\extas\components\systems\states\plugins;
 
-use tratabor\components\systems\Plugin;
-use tratabor\interfaces\systems\IState;
-use tratabor\interfaces\systems\states\IStatePreventable;
-use tratabor\interfaces\systems\states\plugins\IPluginAfterStateBuild;
+use jeyroik\extas\components\systems\Plugin;
+use jeyroik\extas\interfaces\systems\IState;
+use jeyroik\extas\interfaces\systems\states\IStatePreventable;
+use jeyroik\extas\interfaces\systems\states\plugins\IPluginAfterStateBuild;
 
 /**
  * Class PluginAfterStateBuildMaxTry
  *
- * @package tratabor\components\systems\states\plugins
+ * @package jeyroik\extas\components\systems\states\plugins
  * @author Funcraft <me@funcraft.ru>
  */
 class PluginAfterStateBuildMaxTry extends Plugin implements IPluginAfterStateBuild
