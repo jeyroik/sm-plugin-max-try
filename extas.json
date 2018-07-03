@@ -1,0 +1,24 @@
+{
+  "title": "Max try",
+  "description": "Allow to use on terminate transition and to set msx state tries count.",
+  "schema": "1.0",
+  "plugins": [
+    {
+      "class": "jeyroik\\extas\\components\\systems\\states\\plugins\\PluginStateRunValidMaxTry",
+      "stage": "state.run.valid"
+    }
+  ],
+  "extensions": [
+    {
+      "class": "jeyroik\\extas\\components\\systems\\states\\extensions\\ExtensionMaxTry",
+      "interface": "jeyroik\\extas\\interfaces\\systems\\states\\IStatePreventable",
+      "subject": "state",
+      "methods": [
+        "getMaxTry",
+        "getOnTerminate",
+        "incTry",
+        "getTriesCount"
+      ]
+    }
+  ]
+}
