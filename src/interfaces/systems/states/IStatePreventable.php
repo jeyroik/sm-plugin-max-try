@@ -1,15 +1,13 @@
 <?php
 namespace jeyroik\extas\interfaces\systems\states;
 
-use jeyroik\extas\interfaces\systems\IState;
-
 /**
  * Interface IStatePreventable
  *
  * @package jeyroik\extas\interfaces\systems\states
  * @author Funcraft <me@funcraft.ru>
  */
-interface IStatePreventable extends IState
+interface IStatePreventable
 {
     /**
      * @return int

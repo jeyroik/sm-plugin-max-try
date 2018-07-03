@@ -5,7 +5,7 @@ use jeyroik\extas\components\systems\Plugin;
 use jeyroik\extas\interfaces\systems\IState;
 use jeyroik\extas\interfaces\systems\states\IStateMachine;
 use jeyroik\extas\interfaces\systems\states\IStatePreventable;
-use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginIsStateValid;
+use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginStateRunValid;
 
 /**
  * Class PluginIsStateValidMaxTry
@@ -13,8 +13,10 @@ use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginIsStateValid
  * @package jeyroik\extas\components\systems\states\machines\plugins
  * @author Funcraft <me@funcraft.ru>
  */
-class PluginIsStateValidMaxTry extends Plugin implements IPluginIsStateValid
+class PluginStateRunValidMaxTry extends Plugin implements IPluginStateRunValid
 {
+    public $preDefinedStage = IStateMachine::STAGE__STATE_RUN_IS_VALID;
+
     protected static $statesTries = [];
 
     /**
