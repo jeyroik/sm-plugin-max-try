@@ -6,6 +6,10 @@
     {
       "class": "jeyroik\\extas\\components\\systems\\states\\plugins\\PluginStateRunValidMaxTry",
       "stage": "state.run.valid"
+    },
+    {
+      "class": "jeyroik\\extas\\components\\systems\\states\\plugins\\PluginMachineAfterGC",
+      "stage": "machine.after"
     }
   ],
   "extensions": [

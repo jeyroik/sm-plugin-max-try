@@ -28,25 +28,41 @@ class PluginStateRunValidMaxTry extends Plugin implements IPluginStateRunValid
     public function __invoke(IStateMachine $machine, IState $state = null)
     {
         if ($state->isImplementsInterface(IStatePreventable::class)) {
+            $machineHash = sha1(json_encode($machine->getConfig()->__toArray()));
+            if (!isset(static::$statesTries[$machineHash])) {
+                static::$statesTries[$machineHash] = [];
+            }
+
             /**
              * @var $state IStatePreventable
              */
             if ($state->getMaxTry() && ($state->getTriesCount() <= $state->getMaxTry())) {
-                if (!isset(static::$statesTries[$state->getId()])) {
-                    static::$statesTries[$state->getId()] = 0;
+                if (!isset(static::$statesTries[$machineHash][$state->getId()])) {
+                    static::$statesTries[$machineHash][$state->getId()] = 0;
                 }
 
-                if (static::$statesTries[$state->getId()] >= $state->getMaxTry()) {
+                if (static::$statesTries[$machineHash][$state->getId()] >= $state->getMaxTry()) {
                     return false;
                 }
 
-                static::$statesTries[$state->getId()]++;
+                static::$statesTries[$machineHash][$state->getId()]++;
 
                 return true;
             }
         }
 
         return false;
+    }
+
+    /**
+     * @param $machine IStateMachine
+     *
+     * @return void
+     */
+    public static function reset(IStateMachine $machine)
+    {
+        $machineHash = sha1(json_encode($machine->getConfig()->__toArray()));
+        static::$statesTries[$machineHash] = [];
     }
 
     /**
